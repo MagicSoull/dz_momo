@@ -45,25 +45,7 @@ React запрашивает JSON по `/api/products` и `/api/categories`. Ngi
 | `DELETE` | `/api/products/:id` | Удалить аниме |
 | `GET` | `/api/health` | Проверить API и подключение к базе |
 
-Значения `sort`: `newest`, `price_asc`, `price_desc`, `title`. Пример добавления через API из PowerShell:
-
-```powershell
-$body = @{ title = 'Новое аниме'; description = 'Описание'; image = 'https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx130003-HTDmeL4RGeJ4.png'; price = 299; category = 'Фэнтези' } | ConvertTo-Json
-Invoke-RestMethod -Method Post -Uri 'http://localhost:8080/api/products' -ContentType 'application/json' -Body $body
-```
-
-Пример прямого добавления в базу данных для проверки преподавателем:
-
-```bash
-docker compose exec db psql -U catalog -d catalog -c "INSERT INTO products (title, description, image, price, category) VALUES ('Аниме из БД', 'Добавлено напрямую в PostgreSQL', 'https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx130003-HTDmeL4RGeJ4.png', 199.00, 'Музыка');"
-```
-
-После обновления страницы новая карточка появится в каталоге. Это же можно увидеть в ответе `GET /api/products`.
 
 ## Локальная разработка
 
 Для запуска без Docker нужна PostgreSQL с таблицей и данными из `db/init.sql`. В `server` выполните `npm ci`, задайте `DATABASE_URL` и запустите `npm start`. В `my-app` выполните `npm ci` и `npm run dev`, затем откройте `http://localhost:5173`. Swagger UI доступен по адресу `http://localhost:5173/api/docs/`. Vite проксирует `/api` на `http://localhost:5000`. Сборка клиента: `npm run build` в `my-app`.
-
-## Материалы проверки
-
-[Скриншот главной](docs/screenshots/anime-home.png), [скриншот карточек](docs/screenshots/anime-cards.png), [скриншот Swagger UI](docs/screenshots/swagger-ui.png), [скриншот прямого добавления в БД](docs/screenshots/anime-direct-db.png), [JSON-ответ API](docs/api-products.json) и [результаты проверки](docs/verification.md). После публикации изменений workflow [Verify Docker Compose app](.github/workflows/verify.yml) проверит запуск контейнеров и сохранит скриншот `docker compose ps` как артефакт GitHub Actions.

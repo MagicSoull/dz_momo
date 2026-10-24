@@ -1,0 +1,61 @@
+name: Verify Docker Compose app
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build and start services
+        run: docker compose up --build -d
+      - name: Check API and direct database insertion
+        shell: bash
+        run: |
+          set -euo pipefail
+          for attempt in {1..30}; do
+            if curl -fsS http://localhost:8080/api/health > /dev/null; then break; fi
+            sleep 2
+          done
+          curl -fsS http://localhost:8080/api/health | grep -q '"ok"'
+          curl -fsS http://localhost:8080/api/docs/ | grep -q 'Swagger UI'
+          curl -fsS http://localhost:8080/api/openapi.json | grep -q '"openapi":"3.0.3"'
+          curl -fsS http://localhost:8080/api/products > docs/api-compose.json
+          python3 -c 'import json; assert len(json.load(open("docs/api-compose.json"))) == 15'
+          docker compose exec -T db psql -U catalog -d catalog -c "INSERT INTO products (title, description, image, price, category) VALUES ('CI Direct SQL', 'Added in PostgreSQL', 'https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx130003-HTDmeL4RGeJ4.png', 199.00, 'Test');"
+          curl -fsS -G --data-urlencode 'search=CI Direct SQL' http://localhost:8080/api/products | grep -q 'CI Direct SQL'
+          docker compose ps | tee docs/containers.txt
+      - name: Capture website and container list
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p docs/screenshots
+          python3 - <<'PY'
+          from html import escape
+          from pathlib import Path
+          output = escape(Path('docs/containers.txt').read_text())
+          Path('docs/containers.html').write_text('<html><body style="background:#101820;color:#d8f45b;font:17px monospace;padding:28px"><h2>docker compose ps</h2><pre>' + output + '</pre></body></html>')
+          PY
+          google-chrome --headless --no-sandbox --disable-gpu --hide-scrollbars --window-size=1440,1700 --virtual-time-budget=5000 --screenshot="$PWD/docs/screenshots/site-compose.png" http://localhost:8080/
+          google-chrome --headless --no-sandbox --disable-gpu --hide-scrollbars --window-size=1300,500 --screenshot="$PWD/docs/screenshots/containers.png" "file://$PWD/docs/containers.html"
+      - name: Upload verification evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: compose-verification
+          path: |
+            docs/api-compose.json
+            docs/containers.txt
+            docs/screenshots/site-compose.png
+            docs/screenshots/containers.png
+          if-no-files-found: warn
+      - name: Show logs on failure
+        if: failure()
+        run: docker compose logs --no-color
+      - name: Stop services
+        if: always()
+        run: docker compose down

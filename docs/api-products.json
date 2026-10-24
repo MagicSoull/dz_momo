@@ -1,0 +1,137 @@
+[
+  {
+    "id": 15,
+    "title": "Кайдзю № 8",
+    "description": "Кафка вступает в отряд защиты, скрывая невероятный секрет.",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx153288-25FBfFJzEQ5O.jpg",
+    "price": 299,
+    "category": "Фантастика",
+    "created_at": "2026-10-24T09:20:57.033Z"
+  },
+  {
+    "id": 14,
+    "title": "Дандадан",
+    "description": "Оккультные тайны и пришельцы сталкивают двух школьников.",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx171018-60q1B6GK2Ghb.jpg",
+    "price": 329,
+    "category": "Мистика",
+    "created_at": "2026-10-24T09:20:57.033Z"
+  },
+  {
+    "id": 13,
+    "title": "Синяя тюрьма",
+    "description": "Юные футболисты борются за право стать лучшим нападающим.",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx137822-U8naszP96vzC.png",
+    "price": 269,
+    "category": "Спорт",
+    "created_at": "2026-10-24T09:20:57.033Z"
+  },
+  {
+    "id": 12,
+    "title": "Боччи-рок!",
+    "description": "Застенчивая гитаристка находит друзей и свою сцену.",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx130003-HTDmeL4RGeJ4.png",
+    "price": 229,
+    "category": "Музыка",
+    "created_at": "2026-10-24T09:20:57.033Z"
+  },
+  {
+    "id": 11,
+    "title": "Звёздное дитя",
+    "description": "За блеском сцены скрываются тайны индустрии развлечений.",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx150672-WqmmwZ4nMzAy.png",
+    "price": 299,
+    "category": "Драма",
+    "created_at": "2026-10-24T09:20:57.033Z"
+  },
+  {
+    "id": 10,
+    "title": "Семья шпиона",
+    "description": "Шпион, убийца и телепат создают необычную семью.",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx140960-Kb6R5nYQfjmP.jpg",
+    "price": 269,
+    "category": "Комедия",
+    "created_at": "2026-10-24T09:20:57.033Z"
+  },
+  {
+    "id": 9,
+    "title": "Провожающая в последний путь Фрирен",
+    "description": "Эльфийка отправляется в путешествие после победы над злом.",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx154587-qQTzQnEJJ3oB.jpg",
+    "price": 299,
+    "category": "Фэнтези",
+    "created_at": "2026-10-24T09:20:57.033Z"
+  },
+  {
+    "id": 8,
+    "title": "Поднятие уровня в одиночку",
+    "description": "Слабейший охотник получает шанс стать сильнейшим.",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx151807-it355ZgzquUd.png",
+    "price": 349,
+    "category": "Фэнтези",
+    "created_at": "2026-10-24T09:20:57.033Z"
+  },
+  {
+    "id": 7,
+    "title": "Человек-бензопила",
+    "description": "Дэндзи заключает сделку с демоном и меняет свою судьбу.",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx127230-DdP4vAdssLoz.png",
+    "price": 329,
+    "category": "Экшен",
+    "created_at": "2026-10-24T09:20:57.033Z"
+  },
+  {
+    "id": 6,
+    "title": "Наруто",
+    "description": "Юный ниндзя мечтает стать сильнейшим защитником своей деревни.",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20-dE6UHbFFg1A5.jpg",
+    "price": 249,
+    "category": "Приключения",
+    "created_at": "2026-10-24T09:20:57.033Z"
+  },
+  {
+    "id": 5,
+    "title": "Ван-Пис",
+    "description": "Луффи и его команда ищут легендарное сокровище в открытом море.",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21-ELSYx3yMPcKM.jpg",
+    "price": 299,
+    "category": "Приключения",
+    "created_at": "2026-10-24T09:20:57.033Z"
+  },
+  {
+    "id": 4,
+    "title": "Тетрадь смерти",
+    "description": "Загадочная тетрадь превращает школьника в опасного судью.",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1535-kUgkcrfOrkUM.jpg",
+    "price": 249,
+    "category": "Триллер",
+    "created_at": "2026-10-24T09:20:57.033Z"
+  },
+  {
+    "id": 3,
+    "title": "Магическая битва",
+    "description": "Юдзи оказывается в мире проклятий и магических поединков.",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx113415-LHBAeoZDIsnF.jpg",
+    "price": 329,
+    "category": "Экшен",
+    "created_at": "2026-10-24T09:20:57.033Z"
+  },
+  {
+    "id": 2,
+    "title": "Клинок, рассекающий демонов",
+    "description": "Тандзиро вступает в отряд охотников, чтобы спасти сестру.",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx101922-WBsBl0ClmgYL.jpg",
+    "price": 299,
+    "category": "Экшен",
+    "created_at": "2026-10-24T09:20:57.033Z"
+  },
+  {
+    "id": 1,
+    "title": "Атака титанов",
+    "description": "Люди за стенами борются за выживание и правду о своём мире.",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx16498-buvcRTBx4NSm.jpg",
+    "price": 349,
+    "category": "Экшен",
+    "created_at": "2026-10-24T09:20:57.033Z"
+  }
+]

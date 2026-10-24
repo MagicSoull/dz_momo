@@ -4,7 +4,7 @@
 
 Учебный каталог по ТЗ: React + Vite, Node.js + Express, PostgreSQL и Docker Compose. В базе данных хранятся 15 аниме с названием, описанием, ссылкой на обложку, жанром и условной ценой. Интерфейс вдохновлён [референсом](https://ru.pinterest.com/pin/1086000897642605449/). Это каталог карточек; видеоплеер в задание не входит.
 
-Репозиторий проекта: [github.com/mozgotra/Gyrtenko_front_srver_DZ](https://github.com/mozgotra/Gyrtenko_front_srver_DZ).
+Репозиторий проекта: [github.com/MagicSoull/dz_momo](https://github.com/MagicSoull/dz_momo).
 
 ## Запуск через Docker Compose
 
@@ -12,7 +12,7 @@
 2. Скачайте проект и перейдите в его корневую папку (ту, где находится `compose.yaml`):
 
 ```bash
-git clone https://github.com/mozgotra/Gyrtenko_front_srver_DZ.git dz_momo
+git clone https://github.com/MagicSoull/dz_momo.git
 cd dz_momo
 ```
 
